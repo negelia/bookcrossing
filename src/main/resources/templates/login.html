@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>Авторизация </title>
+</head>
+<style>
+  .text-center {
+    text-align: center !important;
+  }
+  .form-style {
+    background: linear-gradient(to right bottom, rgba(43, 44, 78, 1.5), rgba(104, 22, 96, .5));
+    padding: 20px;
+    max-height: 500px;
+    max-width: 300px;
+    padding: 20px 20px;
+    margin: 0px auto 0;
+    border: 0px solid !important;
+    border-radius: 40px;
+  }
+  .form-control {
+    height: 50px;
+    color: white !important;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .item {
+    margin: 8%;
+  }
+  .button {
+    font-size: 15px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.08) !important;
+    font-family: ‘Garamond’, serif;
+    text-align: center;
+    opacity: 0.5;
+    transition: 1s;
+    cursor: pointer;
+  }
+  .button:hover {
+    opacity: 1
+  }
+
+  .checkbox-primary {
+    color: #fff2df;
+    font-family: ‘Garamond’, serif;
+    font-size: 18px;
+    text-align: center;
+    word-spacing: 1px;
+  }
+  .ftco-section {
+    padding: 7em 0;
+  }
+  h2 {
+    color: #fff2df;
+    text-align: center;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    font-family: ‘Garamond’, serif;
+    font-size: 25px;
+    font-weight: lighter;
+  }
+  a {
+    color: #fff2df;
+    font-family: ‘Garamond’, serif;
+    font-size: 20px;
+    text-align: center;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    font-style:italic;
+  }
+  input::placeholder {
+    color: #fff2df;
+    font-family: ‘Garamond’, serif;
+    font-size: 15px;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    opacity: 0.5;
+  }
+  input {
+    color: #fff2df;
+    font-family: ‘Garamond’, serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+  }
+</style>
+<body>
+<!--<div th:if="${param.error}">-->
+<!--  Invalid username and password.-->
+<!--</div>-->
+<!--<div th:if="${param.logout}">-->
+<!--  You have been logged out.-->
+<!--</div>-->
+
+<!--<form th:action="@{/login}" method="post">-->
+<!--  <div><label> User Name : <input type="text" name="username"/> </label></div>-->
+<!--  <div><label> Password: <input type="password" name="password"/> </label></div>-->
+<!--  <div><input type="submit" value="Sign In"/></div>-->
+<!--</form>-->
+<!--<a href="/registration">Регистрация нового пользователя</a>-->
+
+<!--<form th:action="@{/login}" method="post">-->
+<!--  <ul class="form-style-1" method="post">-->
+<!--    <li>-->
+<!--      <label>Авторизация <span class="required">*</span></label>-->
+<!--      <a href="/registration">Регистрация нового пользователя</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <label>Имя пользователя <span class="required">*</span></label>-->
+<!--      <input type="text" name="username" class="field-divided"/>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <label>Пароль <span class="required">*</span></label>-->
+<!--      <input type="password" name="password" class="field-divided" />-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <button type="submit">Подтвердить </button>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</form>-->
+<!--</body>-->
+
+<section class="ftco-section">
+  <div class="text-center">
+    <form class="form-style" th:action="@{/login}" method="post">
+      <h2>Авторизация</h2>
+      <a href="/registration">Регистрация</a>
+      <div class="item">
+        <input name="username" type="text" class="form-control" placeholder="Username" required>
+      </div>
+      <div class="item">
+        <input name="password" type="password" class="form-control" placeholder="Password" required>
+      </div>
+      <div class="item">
+        <input type="submit" value="Войти" class="form-control button">
+      </div>
+    </form>
+  </div>
+</section>
+</body>
+</html>

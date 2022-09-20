@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавление Статуса</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<form th:action="${'/status/add'}" method="post">
+    <input type="text" name="title" placeholder="Введите статус">
+    <br>
+    <button type="submit">Добавить</button>
+</form>
+</body>
+</html>

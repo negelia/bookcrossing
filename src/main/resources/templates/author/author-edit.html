@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Редактирование Писателя</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<div>
+  <form method="post">
+    <input th:each="el : ${author}" type="text" th:value="${el.surname}" name="surname" placeholder="Введите фамилию">
+    <input th:each="el : ${author}" type="text" th:value="${el.name}" name="name" placeholder="Введите имя">
+    <input th:each="el : ${author}" type="text" th:value="${el.middle}" name="middle" placeholder="Введите отчество">
+    <br>
+    <button type="submit">Сохранить изменения</button>
+  </form>
+</div>
+</body>
+</html>

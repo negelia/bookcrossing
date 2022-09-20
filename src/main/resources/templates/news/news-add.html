@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Добавление Новостной статьи</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<form th:action="${'/news/add'}" method="post">
+  <input type="text" name="title" placeholder="Введите название">
+  <textarea name="text" placeholder="Введите содержание"></textarea>
+  <input type="date" name="date">
+  <select  name="event">
+    <div th:each="element : ${events}">
+      <option th:text="${element.title}"></option>
+    </div>
+  </select>
+  <br>
+  <button type="submit">Добавить</button>
+</form>
+</body>
+</html>

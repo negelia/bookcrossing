@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<table id="book">
+    <tr>
+        <th>Город</th>
+        <th>Улица</th>
+        <th>Строение</th>
+        <th>Редактирование</th>
+        <th>Удаление</th>
+    </tr>
+    <div th:each="el : ${address}">
+        <tr>
+            <td th:text="${el.city}"></td>
+            <td th:text="${el.street}"></td>
+            <td th:text="${el.building}"></td>
+            <td><a th:href="'/address/' + ${el.id} + '/edit'">Редактировать</a></td>
+            <td><form th:action="'/address/' + ${el.id} + '/remove'" method="post">
+                <button type="submit" class="btn btn-del">Удалить</button>
+            </form></td>
+        </tr>
+    </div>
+</table>
+</body>
+</html>

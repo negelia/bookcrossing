@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Редактирование Новостной статьи</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<div>
+  <form method="post">
+    <input th:each="el : ${news}" type="text" th:value="${el.title}" name="title" placeholder="Введите название">
+    <input th:each="el : ${news}" type="text" th:value="${el.date}" name="date" placeholder="Введите дату проведения">
+    <textarea th:each="el : ${news}" th:value="${el.text}" name="text"></textarea>
+    <select  name="event">
+      <div th:each="element : ${events}">
+        <option th:text="${element.title}"></option>
+      </div>
+    </select>
+    <br>
+    <button type="submit">Сохранить изменения</button>
+  </form>
+</div>
+</body>
+</html>

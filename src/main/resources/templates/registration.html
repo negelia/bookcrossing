@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Регистрация </title>
+</head>
+<style>
+    .text-center {
+        text-align: center !important;
+    }
+    .form-style {
+        background: linear-gradient(to right bottom, rgba(43, 44, 78, 1.5), rgba(104, 22, 96, .5));
+        padding: 20px;
+        max-height: 500px;
+        max-width: 300px;
+        padding: 20px 20px;
+        margin: 0px auto 0;
+        border: 0px solid !important;
+        border-radius: 40px;
+    }
+    .form-control {
+        height: 50px;
+        color: white !important;
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .item {
+        margin: 8%;
+    }
+    .button {
+        font-size: 15px;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(255, 255, 255, 0.08) !important;
+        font-family: ‘Garamond’, serif;
+        text-align: center;
+        opacity: 0.5;
+        transition: 1s;
+        cursor: pointer;
+    }
+    .button:hover {
+        opacity: 1
+    }
+
+    .checkbox-primary {
+        color: #fff2df;
+        font-family: ‘Garamond’, serif;
+        font-size: 18px;
+        text-align: center;
+        word-spacing: 1px;
+    }
+    .ftco-section {
+        padding: 7em 0;
+    }
+    h2 {
+        color: #fff2df;
+        text-align: center;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+        font-family: ‘Garamond’, serif;
+        font-size: 25px;
+        font-weight: lighter;
+    }
+    a {
+        color: #fff2df;
+        font-family: ‘Garamond’, serif;
+        font-size: 20px;
+        text-align: center;
+        word-spacing: 1px;
+        letter-spacing: 1px;
+        font-style:italic;
+    }
+    input::placeholder {
+        color: #fff2df;
+        font-family: ‘Garamond’, serif;
+        font-size: 15px;
+        word-spacing: 1px;
+        letter-spacing: 1px;
+        opacity: 0.5;
+    }
+    input {
+        color: #fff2df;
+        font-family: ‘Garamond’, serif;
+        font-size: 15px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+    }
+</style>
+<body>
+<!--<div th:if="${#messages}">-->
+<!--    <p th:text="${message}"></p>-->
+<!--</div>-->
+<!--Регистрация нового пользователя-->
+<!--<form th:action="@{/registration}" method="post">-->
+<!--    <div><label> User Name : <input type="text" name="username"/> </label></div>-->
+<!--    <div><label> Password: <input type="password" name="password"/> </label></div>-->
+<!--    <div><input type="submit" value="Sign In"/></div>-->
+<!--</form>-->
+
+<section class="ftco-section">
+    <div class="text-center">
+        <form class="form-style" th:action="@{/registration}" method="post">
+            <h2>Регистрация</h2>
+            <a href="/login">Авторизация</a>
+            <div class="item">
+                <input name="username" type="text" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="item">
+                <input name="password" type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="item">
+                <input type="submit" value="Регистрация" class="form-control button">
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>

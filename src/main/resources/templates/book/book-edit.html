@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Редактирование Книжечки</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<div>
+  <form method="post">
+    <ul class="form-style-1">
+      <label>Название <span class="required">*</span></label>
+      <input class="field-long" th:each="el : ${book}" type="text" th:value="${el.title}" name="title" placeholder="Введите название">
+
+      <label>Автор <span class="required"></span></label>
+      <select class="field-long" name="author">
+        <div th:each="element : ${authors}">
+          <option th:text="${element.surname}"></option>
+        </div>
+      </select>
+
+      <label>Жанр <span class="required"></span></label>
+      <select  class="field-long" name="genre">
+        <div th:each="element : ${genres}">
+          <option th:text="${element.title}"></option>
+        </div>
+      </select>
+
+      <label>Статус <span class="required"></span></label>
+      <select  class="field-long" name="status">
+        <div th:each="element : ${statuses}">
+          <option th:text="${element.title}"></option>
+        </div>
+      </select>
+
+      <label>Язык <span class="required"></span></label>
+      <select  class="field-long" name="language">
+        <div th:each="element : ${languages}">
+          <option th:text="${element.title}"></option>
+        </div>
+      </select>
+
+      <label>Категория <span class="required"></span></label>
+      <select  class="field-long" name="category">
+        <div th:each="element : ${categories}">
+          <option th:text="${element.title}"></option>
+        </div>
+      </select>
+
+      <label>Адрес <span class="required"></span></label>
+      <select  class="field-long" name="address">
+        <div th:each="element : ${addresses}">
+          <option th:text="${element.street}"></option>
+        </div>
+      </select>
+
+      <div style="margin: 15px">
+        <button class="field-long btn btn-del" type="submit">Сохранить</button>
+      </div>
+    </ul>
+  </form>
+</div>
+</body>
+</html>

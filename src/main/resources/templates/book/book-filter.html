@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<h2>Фильтрация</h2>
+<form method="post" th:action="${'/book/filter/result'}">
+    <input type="text" name="title">
+    <button type="submit">Найти</button>
+    <div th:each="el : ${result}" >
+        <h1 th:text="${el.title}"></h1>
+        <h2 th:text="${el.author.surname}+' '+${el.author.name}+' '+${el.author.middle}"></h2>
+        <p th:text="${el.genre.title}"></p>
+        <p th:text="${el.status.title}"></p>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<table id="book">
+    <tr>
+        <th>Название</th>
+        <th>Автор</th>
+        <th>Жанр</th>
+        <th>Подробнее</th>
+    </tr>
+    <div th:each="el : ${books}">
+        <tr>
+            <td th:text="${el.title}"></td>
+            <td th:text="${el.author.surname}+' '+${el.author.name}+' '+${el.author.middle}"></td>
+            <td th:text="${el.genre.title}"></td>
+            <td><a th:href="'/book/' + ${el.id}">Детали</a></td>
+        </tr>
+    </div>
+</table>
+</body>
+</html>

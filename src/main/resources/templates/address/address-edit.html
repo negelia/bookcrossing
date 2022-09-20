@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Редактирование Адреса</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<div>
+  <form method="post">
+    <input th:each="el : ${address}" type="text" th:value="${el.city}" name="city" placeholder="Введите город">
+    <input th:each="el : ${address}" type="text" th:value="${el.street}" name="street" placeholder="Введите улицу">
+    <input th:each="el : ${address}" type="text" th:value="${el.building}" name="building" placeholder="Введите домик">
+    <br>
+    <button type="submit">Сохранить изменения</button>
+  </form>
+</div>
+</body>
+</html>
